@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <style>
+        .col-md-4 .card-img-top {
+            height: 200px;
+            width: 100%;
+            object-fit: cover;
+        }
+
+        .card {
+            position: relative;
+            overflow: hidden;
+            cursor: pointer;
+            transition: transform 0.2s;
+        }
+
+        .card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: inherit;
+            filter: blur(3px);
+            z-index: -1;
+            transition: filter 0.2s;
+        }
+
+        .card:hover {
+            transform: scale(1.05);
+        }
+
+        .card:hover::before {
+            filter: blur(0);
+        }
+
+        .cropped {
+            position: relative;
+        }
+
+        .details-label {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 20px;
+            color: white;
+            background-color: rgba(0, 0, 0, 0.5);
+            padding: 10px 20px;
+            border-radius: 5px;
+            z-index: 1;
+            opacity: 0;
+            transition: opacity 0.2s;
+        }
+
+        .card:hover .details-label {
+            opacity: 1;
+        }
+
+        .card:hover img {
+            filter: blur(3px);
+        }
+
+
+        .card-body p {
+            text-align: right;
+        }
+
+
+        .card-body h5 {
+            background-color: #003366;
+            color: white;
+            border-radius: 15px;
+            padding: 8px;
+        }
+
+        #carreras {
+            background-color: #09967e;
+            color: white;
+            border-radius: 10px;
+            padding: 10px;
+            font-size: 30px;
+        }
+
+        .txtNav {
+            color: white;
+        }     
+    </style>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg sticky-top"
+        style="background: linear-gradient(90deg, rgba(129,223,202,1) 0%, rgba(39,166,138,1) 47%, rgba(5,92,73,1) 100%);">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#"><img
+                    src="https://upload.wikimedia.org/wikipedia/commons/5/54/Logo-utez.png" alt="utez" height="35"
+                    width="85"></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
+                aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link txtNav" href="#">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link txtNav" href="#">Acerca de nosotros</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link txtNav" href="#">Carreras</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link txtNav" href="#">Contactanos</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <br>
+    <div class="container text-center">
+        <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-indicators">
+                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active"
+                    aria-current="true" aria-label="Slide 1"></button>
+                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1"
+                    aria-label="Slide 2"></button>
+                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2"
+                    aria-label="Slide 3"></button>
+                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="3"
+                    aria-label="Slide 4"></button>
+            </div>
+            <div class="carousel-inner">
+                <div class="carousel-item active p-3">
+                    <img src="http://www.utez.edu.mx/cache/resized/16acce321aadc17f49913cbb8dc67d23.png"
+                        class="img-fluid w-100" alt="...">
+                </div>
+                <div class="carousel-item p-3">
+                    <img src="	http://www.utez.edu.mx/cache/resized/884ce91760c5e10e04bfb84e6ab1c30b.png"
+                        class="img-fluid w-100" alt="...">
+                </div>
+                <div class="carousel-item p-3">
+                    <img src="http://www.utez.edu.mx/images/2023/08/Plantacion_de_100_arboles.png"
+                        class="img-fluid w-100 " alt="...">
+                </div>
+                <div class="carousel-item p-3">
+                    <img src="http://www.utez.edu.mx/images/2022/02/Portada-conocenos.png" class="img-fluid w-100"
+                        alt="...">
+                </div>
+            </div>
+        </div>
+        <h1 id="carreras" class="text-center">¿Quiénes Somos?</h1>
+        <p style="text-align: justify;">
+            <span style="font-family: helvetica;">
+                La Universidad Tecnológica Emiliano Zapata (UTEZ), es una Universidad pública creada en el año 2000 que
+                forma parte del Sistema Nacional de Universidades Tecnológicas de la SEP, cuyo innovador modelo ofrece
+                planes de estudio para formar Técnicas y Técnicos Superiores Universitarios e Ingenieros e Ingenieras en
+                sólo tres años ocho meses, generando profesionistas competentes con altos niveles tecnológicos para dar
+                respuesta a las necesidades de los sectores social y productivo de la región y del país.
+            </span>
+        </p>
+    </div>
+    <br>
+    <div class="container mb-4">
+        <h1 id="carreras" class="text-center">NUESTRAS CARRERAS</h1>
+        <br>
+        <div id="listaCarreras" class="row">
+            <div class="col-12">
+                <div class="card-deck">
+                    <div id="listUsers" class="row">
+                        <div class="col-md-4">
+                            <div class="card mb-4">
+                                <div class="cropped">
+                                    <img src="https://www.epitech-it.es/wp-content/uploads/2022/06/softwares-de-programacion.jpg"
+                                        class="card-img-top" alt="Avatar">
+                                </div>
+                                <div class="card-body">
+                                    <h5 class="card-title">Desarrollo de Software</h5>
+                                    <p>Ingeniería</p>
+                                    <p class="card-text"></p>
+                                </div>
+                                <div class="details-label"> VER DETALLES </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="card mb-4">
+                                <img src="https://alodoctor.co/assets/iblog/post/29.jpg" class="card-img-top"
+                                    alt="Avatar">
+                                <div class="card-body">
+                                    <h5 class="card-title">Terapia Física</h5>
+                                    <p class="card-text">Licenciatura</p>
+                                    <p class="card-text"></p>
+                                </div>
+                                <div class="details-label"> VER DETALLES </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="card mb-4">
+                                <img src="https://www.grupocibernos.com/hubfs/en%20que%20consiste%20la%20ciberseguridad.jpg"
+                                    class="card-img-top" alt="Avatar">
+                                <div class="card-body">
+                                    <h5 class="card-title">Redes y Ciberseguridad</h5>
+                                    <p class="card-text">Ingeniería</p>
+                                    <p class="card-text"></p>
+                                </div>
+                                <div class="details-label"> VER DETALLES </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="card mb-4">
+                                <img src="https://www.toulouselautrec.edu.pe/sites/default/files/inline-images/que-es-disen%CC%83o-grafico.jpg"
+                                    class="card-img-top" alt="Avatar">
+                                <div class="card-body">
+                                    <h5 class="card-title">Diseño Digital </h5>
+                                    <p class="card-text">Licenciatura</p>
+                                    <p class="card-text"></p>
+                                </div>
+                                <div class="details-label"> VER DETALLES </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="card mb-4">
+                                <img src="https://www.aliatuniversidades.com.mx/hubfs/ulc-ingenieria-industrial-mexico%20%281%29.jpg"
+                                    class="card-img-top" alt="Avatar">
+                                <div class="card-body">
+                                    <h5 class="card-title">Ingeniería industrial</h5>
+                                    <p class="card-text">Ingeniería</p>
+                                    <p class="card-text"></p>
+                                </div>
+                                <div class="details-label"> VER DETALLES </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="card mb-4">
+                                <img src="https://uvp.mx/uvpblog/wp-content/uploads/2021/04/merca.jpg"
+                                    class="card-img-top" alt="Avatar">
+                                <div class="card-body">
+                                    <h5 class="card-title">Mercadotecnia</h5>
+                                    <p class="card-text">Licenciatura</p>
+                                    <p class="card-text"></p>
+                                </div>
+                                <div class="details-label"> VER DETALLES </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="card mb-4">
+                                <img src="https://blogs.unitec.mx/hubfs/Imported_Blog_Media/habilidades-que-todo-ingeniero-mecatronico-debe-tener-1-compressor-Dec-17-2022-08-24-45-7060-PM.jpg"
+                                    class="card-img-top" alt="Avatar">
+                                <div class="card-body">
+                                    <h5 class="card-title">Mecatrónica</h5>
+                                    <p class="card-text">Ingeniería</p>
+                                    <p class="card-text"></p>
+                                </div>
+                                <div class="details-label"> VER DETALLES </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="card mb-4">
+                                <img src="https://www.bizneo.com/blog/wp-content/uploads/2019/08/gestion-recursos-humanos-810x455.jpeg"
+                                    class="card-img-top" alt="Avatar">
+                                <div class="card-body">
+                                    <h5 class="card-title">Gestión Cap. Humano</h5>
+                                    <p class="card-text">Licenciatura</p>
+                                    <p class="card-text"></p>
+                                </div>
+                                <div class="details-label"> VER DETALLES </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="card mb-4">
+                                <img src="https://morelos.gob.mx/sites/default/files/fotos-boletines/DSC_0430-min.JPG"
+                                    class="card-img-top" alt="Avatar">
+                                <div class="card-body">
+                                    <h5 class="card-title">Nanotecnología</h5>
+                                    <p class="card-text">Ingeniería</p>
+                                    <p class="card-text"></p>
+                                </div>
+                                <div class="details-label"> VER DETALLES </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="card mb-4">
+                                <img src="https://puebla.anahuac.mx/hs-fs/hubfs/estudiante-clase-de-moda.webp?width=800&name=estudiante-clase-de-moda.webp"
+                                    class="card-img-top" alt="Avatar">
+                                <div class="card-body">
+                                    <h5 class="card-title">Diseño textil y moda</h5>
+                                    <p class="card-text">Ingeniería</p>
+                                    <p class="card-text"></p>
+                                </div>
+                                <div class="details-label"> VER DETALLES </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="card mb-4">
+                                <img src="https://d100mj7v0l85u5.cloudfront.net/s3fs-public/inline-images/4-pasos-para-optimizar-la-gestion-del-mantenimiento-industrial.png"
+                                    class="card-img-top" alt="Avatar">
+                                <div class="card-body">
+                                    <h5 class="card-title">Mantenimiento industrial</h5>
+                                    <p class="card-text">Ingeniería</p>
+                                    <p class="card-text"></p>
+                                </div>
+                                <div class="details-label"> VER DETALLES </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        $(document).ready(function () {
+            $(".card-body p").each(function () {
+                var contenido = $(this).text();
+                if (contenido.indexOf("Ingeniería") !== -1) {
+                    $(this).css("color", "lightseagreen");
+                } else if (contenido.indexOf("Licenciatura") !== -1) {
+                    $(this).css("color", "green");
+                }
+            });
+        });
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>

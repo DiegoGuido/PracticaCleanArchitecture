@@ -1,0 +1,17 @@
+ /* Estilo para cambiar el color del primer h1 */
+.lead {
+    color: #009574;
+}
+.text-subtitulos{
+    color: #002E60
+}
+.fondo-card-title{
+    background-color: #009574;
+}
+.fondo-texto{
+    background-color: #002E60;
+}
+.fondo-subtitulos{
+    background-color: #009574;
+}
+
